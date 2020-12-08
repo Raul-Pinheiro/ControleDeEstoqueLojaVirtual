@@ -1,0 +1,141 @@
+.pag-section{
+
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    align-items: center;    
+    background-color: $corFundo-menuPaginacao;
+    width:150px;
+    height: 50px;
+    right:0;
+    
+   
+}
+.posicionamento-pagination{
+   
+    position: relative;
+    margin:auto;   
+    right:8px;
+    
+}
+
+
+
+
+
+
+
+/*Imagens*/
+.vitrine{
+    width:100%;
+    height:100%;      
+    display: flex;    
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:10px auto 0 auto;
+    padding:20px;  
+   
+}
+
+.container-thumb{ 
+    position: static;  
+    width:300px;
+    height:520px;
+    display: flex;
+    flex-direction: column;    
+    justify-content: flex-end;
+    align-items: center;
+    margin:15px;
+    border:1px solid transparent;
+    box-shadow:2px 2px 2px rgb(153, 189, 180); 
+    border-radius:40px; 
+    
+}
+
+.container-img{
+    flex:1;
+    width:100%;
+    height:260px;
+    margin:auto; 
+      
+    
+
+}
+.foto-thumb{
+    
+    width:100%;
+    height: 100%;
+    border-top-left-radius:40px;  
+    border-top-right-radius:40px;  
+    
+    
+}
+
+/*Descrição*/
+
+.product_description{
+   
+    width: 100%;
+    height:300px;    
+    display: block;
+    margin-top:5px;
+   
+   
+}
+
+.description-container{
+    width:100%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-collapse: collapse;
+}
+
+.thumb-p{
+ 
+    font-family: Arial;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.thumb-h1{
+    
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: $fonteLetra-TituloThumb;
+    font-size:16px;
+    text-transform: uppercase;
+    color:rgb(19, 18, 18);
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.thumbtitle-link{
+    text-decoration: none;
+    &:hover{
+        color:black;
+        text-align: none;
+    }
+}
+.thumb-h2{
+    
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: $fonteLetra-subTituloThumb;
+    font-weight: normal;
+    font-size: 15px;
+        
+}
+
+.span-thumb{
+    font-weight: bold;
+}
+
+
+.crud{
+    margin:5px;
+}
+

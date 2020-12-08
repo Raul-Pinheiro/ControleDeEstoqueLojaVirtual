@@ -1,0 +1,29 @@
+{% extends 'bases/base_template_loja.html' %}
+{% load static %}
+{% block content %}
+
+    {% include 'partials/_headerLojaVirtual.html'%}
+    <div class="container-detalhes">                     
+        <div class="detalhes-container-foto">
+            {% if detalhes.foto_produto %}
+                <img src="{{detalhes.foto_produto.url}}" class="detalhes-imagem">
+            {% else %}          
+                <img src="{% static 'images/varejo.jpg'%}" class="detalhes-imagem">             
+                
+            {% endif %}
+        </div>
+        <div class="detalhes-descricao-container">
+            <h2>Nome: {{detalhes.produto}}</h2>              
+            <h2>Preço: R$ {{detalhes.valor_venda}}</h2>
+            <p> Descrição: {{detalhes.descricao}}</p>
+            <h2>Categoria: {{detalhes.categoria}}</h2>
+            <h2>Disponível: {{detalhes.estoque_atual}}</h2>
+            <button type="submit" name="" class="btn btn-success mt-2">Adicionar ao Carrinho </button>
+        </div>          
+                  
+    </div>
+    <div class="mt-2"style="background-color:rgb(166, 166, 167);">
+        {%include 'partials/_footerApresentacao.html' %}
+    </div>
+
+{% endblock %}

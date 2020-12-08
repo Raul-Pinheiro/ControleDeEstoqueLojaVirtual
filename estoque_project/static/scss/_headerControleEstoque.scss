@@ -1,0 +1,42 @@
+@keyframes toggle{
+    0%{width: 25px;}
+    20%{width: 50px;}
+    50%{width: 75px;}
+    75%{width: 125px;}
+    100%{width: 200px;}
+}
+
+@keyframes texto{
+    0%{visibility: hidden;} 
+    100%{visibility: collapse;}
+}
+
+
+.header_estoque{
+    width:100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color:$corFundo-HeaderEstoque;
+    position: fixed;
+    top:0;
+    padding:auto;
+}
+
+.logout_link{
+    text-decoration: none;
+    &:hover{
+        color:$colorLetra-LogoutLink;
+        text-decoration: none;
+    }
+}
+
+.nome_usuario{
+    text-align: justify;
+    font-size:$fontSize-nomeUserEstoque;
+    color:$corLetra-nomeUserEstoque;
+    margin:20px;
+    animation: texto 0.10s;
+}
+

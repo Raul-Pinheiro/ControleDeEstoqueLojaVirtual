@@ -1,0 +1,39 @@
+{% extends 'bases/base_template.html'%}
+{%load static %}
+{%block content%}
+
+    {%include 'partials/_headerApresentacao.html' %}
+ 
+        <main class="container-xl d-flex flex-column justify-content-center align-items-center p-4">
+            {% include 'partials/_mensagens.html'%}
+            <form action="{% url 'authLogin' %}" method="POST" class="d-flex flex-column justify-content-center align-items-center mt-3">
+                {% csrf_token %}
+                <h2 class="text-center mb-3">Faça seu login</h2>
+                <div class="form-group d-flex flex-column">
+                    <label class="text-center">
+                        Tipo de Usuário:
+                        <select type="text" class="form-control mt-3" name="login_tipo" >
+                            <option value="Administrador">Administrador</option>
+                            <option value="Funcionario">Funcionário</option>                                                
+                        </select> 
+                    </label>
+                    <label class="text-center">
+                        Digite seu email:
+                        <input type="email" class="form-control mt-3"  name="email_acesso" value="{{value_email}}">
+                    </label> 
+                    <label class="text-center" class="login_senha">
+                        Digite sua senha:
+                        <input type="password" class="form-control mt-3" name="login_senha" value="{{value_senha}}">
+                    </label>
+                    <div clas="form-group p-4 mt-5">
+                        <button type="submit" class="btn btn-primary form-control mt-3">Acessar</button>
+                    </div>
+                </div>  
+            
+            </form>
+        
+        </main>
+        <div class="mt-2"style="background-color:rgb(166, 166, 167);">
+            {%include 'partials/_footerApresentacao.html' %}
+        </div>
+{% endblock %}

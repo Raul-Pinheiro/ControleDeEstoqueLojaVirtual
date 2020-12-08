@@ -1,0 +1,36 @@
+{% load static %}
+<header class="header_estoque">
+    <div class="container-geral-header-loja">
+        
+        <div class="container-icon-logo">
+            <i class="fa fa-bars" style="font-size:36px" id="open_hamb"class="icone-barra"></i>
+            <h1 class="logo">Portal W1dea</h1>            
+        </div>
+        <div class="container-form">
+                     
+                
+                <button type="submit" class="btn btn-primary"><a class="logout_link" href="{% url 'logout'%}">Logout</a></button>            
+            
+        </div>
+    </div>
+
+    <div class="menu_dropdown">
+        <div>
+            <i class="fa fa-bars" style="font-size:36px" id="close_hamb"class="icone-barra" ></i>
+            <h1 class="logo">Portal W1dea</h1>            
+        </div>   
+        <h2 class="nome_usuario">{{usuario}}</h2>    
+        
+       
+      
+        <nav>
+            <ul class="list_menu">                                 
+                <li class="list_line"><a class="list_link" href="{% url 'dashboard'%}">Dashboard</a></li>
+                <li class="list_line"><a class="list_link" href="{% url 'produtos'%}">Display Produtos</a></li>
+                <li class="list_line"></li>                    
+            
+            </ul>
+        </nav>
+
+    </div>
+ </header>

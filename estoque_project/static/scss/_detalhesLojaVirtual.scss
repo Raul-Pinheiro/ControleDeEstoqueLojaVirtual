@@ -1,0 +1,27 @@
+.container-detalhes{
+    width: 100%;
+    height: fit-content;
+    padding:100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.detalhes-container-foto{
+    flex:2;
+    width:400px;
+    height: 500px;
+}
+.detalhes-imagem{
+    width:360px;
+    height: 400px;
+    margin:80px auto 80px auto;
+    
+}
+.detalhes-descricao-container{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}

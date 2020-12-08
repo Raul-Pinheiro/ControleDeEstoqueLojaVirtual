@@ -1,0 +1,96 @@
+/*Animação de Abertura*/
+@keyframes toggle{
+    0%{width: 25px;}
+    20%{width: 50px;}
+    50%{width: 75px;}
+    75%{width: 125px;}
+    100%{width: 200px;}
+}
+
+@keyframes texto{
+    0%{visibility: hidden;} 
+    100%{visibility: collapse;}
+}
+
+
+
+
+/* header loja */
+
+
+.header_loja{
+    width:100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color:$corFundo-HeaderLoja;
+    position: fixed;
+    top:0;
+    padding:auto;
+    
+}
+
+.container-geral-header-loja{
+    display:flex;
+    padding:10px;
+    width:100%;
+    
+}
+
+.container-icon-logo{
+    display: flex;
+    flex:1;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left:20px;
+    
+}
+
+.container-form{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.container-input-search{
+    display: flex;
+}
+
+/**/
+
+.icone-barra{
+    color:white;
+    
+}
+
+
+.busca_produto{
+    outline: none;
+    margin:auto;
+    width:400px;
+    height:30px;    
+    border:transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    &[placeholder]{
+        text-align:center;
+    }
+}
+
+.btn_search{
+    width:70px;
+    height:30px;    
+    border:transparent;
+    outline:none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: $corFundo-botao;
+    color:$corLetra-botao;
+    &:hover{
+        color: $corLetra-botaoHover;
+        background-color: $corFundo-botaoHover;
+        font-weight: bold;
+    }  
+}
+

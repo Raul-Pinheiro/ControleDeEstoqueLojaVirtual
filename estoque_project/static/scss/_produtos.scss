@@ -1,0 +1,78 @@
+
+
+.container-tabela{
+    display: block;
+    width:80%;
+    height:500px;
+}
+
+
+.main_products_header{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.main_products_table_container{
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: normal;
+    overflow-x: auto;
+    
+}
+.table{
+    display: block;
+    border-collapse: collapse; 
+    overflow:auto; 
+    white-space: nowrap;
+    width:80%; 
+    margin-top:50px;
+    font-family: arial;
+    
+    
+    
+
+    .thead_row{    
+        background-color: rgb(93, 104, 112);
+        
+        .thead_column{
+            text-align: left;
+            padding:4px; 
+            text-overflow: ellipsis;
+            font-size:18px;
+            color:rgb(34, 26, 26);
+            text-align: left;          
+                        
+           
+        }
+    }
+    .tbody_row:nth-child(2n){
+        background-color: rgb(50, 102, 76);       
+        border:1px solid black;
+      
+    }
+    .tbody_column{
+        text-align: center;      
+        text-overflow: ellipsis;
+        
+        padding:4px;
+        font-size:16px; 
+        color:black;
+        text-align: left;
+        vertical-align: center;
+        
+        
+    }
+}
+
+
+   
+.botao-thumb{
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+}

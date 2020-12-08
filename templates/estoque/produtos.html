@@ -1,0 +1,60 @@
+{% extends 'bases/base_template_estoque.html' %}
+{% load static %}
+{% block content %}
+{% include 'partials/_headerControleEstoque.html'%}
+
+<main class="main">
+    <div class="botao-thumb">
+        <a class="btn btn-success ml-5" type="button" href="{% url 'formulario_produtos'%}">Cadastro de produtos</a>
+    </div>
+    <div class="container-tabela">
+        <table class="table">
+            <thead class="thead">                  
+            
+                <tr class="thead_row">
+                    <th  class="thead_column">Nome do Produto</th>
+                    <th  class="thead_column">Tipo de Medida</th>
+                    <th  class="thead_column">Categoria do Produto</th>                 
+                    <th  class="thead_column">Descrição</th>
+                    <th  class="thead_column">Preço de vendas</th>
+                    <th  class="thead_column"> Quantidade por embalagem </th>
+                    <th  class="thead_column">Foto do produto</th>
+                    <th  class="thead_column">Publicada</th>           
+                                        
+                </tr>
+            </thead>
+
+            <tbody class="tbody">
+                {% if produtos %}
+                {% for produto in produtos %}  
+                <tr class="tbody_row">
+                    <td class="tbody_column">{{produto.produto}}</td> 
+                    <td class="tbody_column">{{produto.medida}}</td> 
+                    <td class="tbody_column">{{produto.categoria}}</td>  
+                    <td class="tbody_column">{{produto.descricao}}</td>   
+                    <td class="tbody_column">{{produto.valor_venda}}</td>  
+                    <td class="tbody_column">{{produto.quantidade_por_embalagem}}</td>  
+                    <td class="tbody_column">{{produto.foto_produto}}</td>  
+                    <td class="tbody_column">{{produto.publicada}}</td> 
+                    <td class="tbody_column">                
+                        <a type="button" href="{% url 'deleta_produto' produto.id %}" class="btn btn-danger crud">Excluir</a>
+                    </td> 
+                    <td class="tbody_column">
+                        <a type="button" href="{% url 'edita_produto' produto.id %}" class="btn btn-info crud">Editar</a>
+
+                    </td> 
+                
+
+                </tr>
+                {% endfor %}
+                {%endif%}
+                
+            </tbody>       
+        
+        </table>
+              
+    </div>       
+                       
+  
+</main>
+{%endblock%}

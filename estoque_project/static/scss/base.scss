@@ -1,0 +1,123 @@
+/*Fonte de letras*/
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
+
+/* Variáveis: Cor de letra */
+
+$corLetra-botao:white;
+$corLetra-botaoHover:white;
+$corLetra-Logo:white;
+$corLetra-ListLink:white;
+$corLetra-ListLink:white;
+$corLetra-nomeUserEstoque:white;
+
+$colorLetra-LogoutLink:white;
+/* Variáveis: Cor de Fundo */
+
+$corFundo-botao:rgb(54, 86, 88);
+$corFundo-botaoHover:rgb(25, 32, 32);
+$corFundo-HeaderLoja:rgb(85, 138, 124);
+$corFundo-HeaderEstoque:rgb(86, 92, 99);
+$corFundo-MenuDropdown:rgb(56, 75, 78);
+$corFunda-ContainerThumb:rgb(62, 101, 104);
+$corFundo-body:rgb(252, 252, 252);
+$corFundo-menuPaginacao:rgb(255, 255, 255);
+
+/*Variaveis: Cor bordas*/
+$corBorda-thumb:rgb(177, 174, 174);
+
+/*Variáveis: Tamanho de letra*/
+$fontSize-nomeUserEstoque:20px;
+
+/*Variáveis: Fonte Letra*/
+$fonteLetra-TituloThumb:'Crete Round', serif;
+$fonteLetra-subTituloThumb:'Crete Round', serif;
+$fonteLetra-linkPaginacao:'Crete Round', serif;
+/*Importa scss extendidos*/
+
+@import 'headerLojaVirtual';
+@import 'vitrineLojaVirtual';
+@import 'detalhesLojaVirtual';
+@import 'suporte';
+@import 'headerControleEstoque';
+@import 'produtos';
+
+
+
+/* Containers*/
+
+.body{
+    margin:0;
+    padding:0;
+    background-color: $corFundo-body;
+}
+
+.main{
+    width:100%;
+    height:fit-content;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+
+}
+
+
+/*Menu drop down*/
+
+.logo{
+    color:$corLetra-Logo;
+    margin-left: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:25px;
+    animation: texto 0.15s;
+}
+.menu_dropdown{
+    display: none;
+    position:absolute;
+    animation:toggle 0.10s;
+    top:0;
+    left: 0;
+    width: 260px;
+    height: 700px;
+    background-color:$corFundo-MenuDropdown;
+}
+
+#close_hamb{
+    position:relative;
+    left:200px;
+    top:40px;
+    animation: texto 0.15s;
+}
+
+.list_menu{
+    list-style: none;
+    display: flex;
+    position:relative;
+    left:0;
+    top:60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    animation:toggle 0.10s;
+
+}
+.list_line{
+    margin-top:20px;
+    animation:texto 0.10s;
+    
+}
+.list_link{
+    text-decoration:none;
+    color:$corLetra-ListLink;
+    text-transform: uppercase;
+    &:hover{
+        text-decoration: underline;
+        color:$corLetra-ListLink;
+    }
+}
+
+
+

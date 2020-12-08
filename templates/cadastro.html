@@ -1,0 +1,76 @@
+{% extends 'bases/base_template.html'%}
+{%load static %}
+{%block content%}
+
+    {%include 'partials/_headerApresentacao.html' %}
+    
+        <main class=" container-xl d-flex flex-column justify-content-center align-items-center mt-3 mb-4 pb-5" >
+            
+            <h2>Faça seu cadastro na plataforma</h2>
+            {% include 'partials/_mensagens.html' %}   
+            
+            <form action="{% url 'cadastro_db'%}" method="POST" class="container d-flex flex-column justify-content-center align-items-center mt-2 p-4">
+                {% csrf_token %}
+                <div class="form-group custom-control mt-1">
+                    <div>
+                    <label>
+                        Nome da empresa:
+                        <input type="text" class="form-control" name='cadastro_empresa' value="{{value_cadastro_empresa}}" placeholder="Ex. Empresa X">
+                    </label>
+
+                    <label>
+                        Digite o CNPJ:
+                        <input type="text"  class="form-control" name="cadastro_cnpj" value="{{value_cadastro_cnpj}}" id="cnpj" maxlength="18" autocomplete="off"placeholder="00.000.000/000-00">
+                    </label>
+                    
+                    <label >
+                        Selecione um Plano:
+                        <select type="text" class="form-control" name="cadastro_plano">
+                            <option value="versao_free">Versão Gratuita</option>
+                            <option value="versao_plus">Versão Plus</option>
+                            <option value="versao_premium">Versão Premium</option>                           
+                        </select> 
+                    </label>
+                    </div>
+                    <div>
+                        <label>
+                            Digite o código recebido:
+                            <input type="text" class="form-control" name="cadastro_codigo_autenticacao" value="{{value_cadastro_codigo_autenticacao}}" placeholder="Código de autenticação">
+                        </label>                 
+                        
+                        <label>
+                            Digite seu nome de administrador:
+                            <input type="text" class="form-control" name="cadastro_user_admin"value="{{value_cadastro_user_admin}}" placeholder="Administrador do portal">
+                        </label>
+                    </div>                
+                             
+                    <div class="">
+                        <label>
+                            Digite seu email:
+                            <input type="email" class="form-control" name="cadastro_email_admin" value="{{value_cadastro_email_admin}}" placeholder="xxxx@dominio.com">
+                        </label> 
+                        <label>
+                            Digite sua senha:
+                            <input type="password" class="form-control" name="cadastro_senha_admin" value="{{value_cadastro_senha_admin}}" placeholder="*******">
+                        </label>                 
+                        
+                        <label>
+                            Repita a senha:
+                            <input type="password" class="form-control" name="cadastro_senha_confirm" value="{{value_cadastro_senha_confirm}}" placeholder="*******">
+                        </label>
+                    </div>
+                </div>              
+             
+               
+                <div clas="form-group p-4">
+                    <button type="submit" class="btn btn-primary form-control">Cadastrar</button>
+                </div>
+
+            </form>
+
+        </main>
+
+        <div class="mt-2"style="background-color:rgb(166, 166, 167);">
+            {%include 'partials/_footerApresentacao.html' %}
+        </div>
+{% endblock %}

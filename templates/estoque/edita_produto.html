@@ -1,0 +1,105 @@
+{% extends 'bases/base_template_estoque.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/_headerControleEstoque.html'%}
+
+produto_a_editar
+
+<main class="main">
+    <h1 class="text-center">Atualize os dados do produto</h1>
+
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <form action="{% url 'atualiza_produto'%}" method='POST'class="form-group d-flex flex-column justify-content-center align-items-center"enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" id="produto__user" name="produto_user"value="{{produto.vendedor_auth}}" >
+            <input type="hidden" id="produto_id" name="produto_id"value="{{produto.id}}" >
+           <label for="" class="">
+               Nome do produto:
+               <input type="text" value="{{produto.produto}}"name="produto"class="form-control">
+           </label>
+
+           <label for="" class="">
+            Tipo de medida:
+            <select name="medida">
+                <option value="{{produto.medida}}"></option>
+                <option value="caixa">caixa</option>
+                <option value="fardo">fardo</option>
+                <option value="quilo">quilos</option>
+                <option value="gramas">gramas</option>
+                <option value="pacote">pacote</option>
+                <option value="metro">metro</option>
+                <option value="centimetro">centimetro</option>
+                <option value="litros">litros</option>
+                <option value="mL">mL</option>
+               
+
+            </select>
+            </label>
+
+            <label for="" class="">
+                Categoria do produto:
+                <select name="categoria"class="form-control">
+                                      
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="literatura">Literatura</option>
+                    <option value="escritorio">Escritório</option>
+                    <option value="casa&cozinha">Casa & Cozinha</option>
+                    <option value="moda">Moda</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="esportes">Esportes</option>
+                    <option value="pet-shop">Pet Shop</option>
+                    <option value="games">Games</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="brinquedos">Brinquedos</option>
+                    <option value="viagem">Viagem</option>
+                    <option value="{{produto.categoria}}"></option> 
+                </select>
+            </label>
+            
+            <label for="" >
+                Forneça mais detalhes sobre o produto:
+                <textarea name="descricao"class="form-control">
+                    {{produto.descricao}}
+                </textarea>
+            </label>
+
+            <label for="" class="">
+                Quantidade por embalagem:
+                <input type="text" name="quantidade_por_embalagem"class="form-control" value="{{produto.quantidade_por_embalagem}}">
+            </label>
+            <div class="container" >
+                <label for="file"><b>Foto utilizada</b></label>
+                <img src="{{ produto.foto_produto.url }}" alt="" style="width: 400px;height:300px;">
+            </div>
+            <label for="foto_produto" class="">
+                Foto do produto:
+                <input type="file" name="foto_produto" class="form-control"id="foto_produto" >
+            </label>
+            <label>
+                Preço de venda:
+                <input type="text" name='valor_venda' class="form-control" id='valor_venda' value="{{produto.valor_venda}}">
+            </label>
+            <label for="" class="">
+                Deseja publicar?
+                <select name="publicada"class="form-control">
+                    
+                    <option value="True">Publicar</option>
+                    <option value="False">Não Publicar</option>
+                    <option value="{{produto.publicada}}"></option>
+                   
+                </select>
+
+            </label>
+
+            <button type="submit" class="btn btn-success">Atualizar</button>
+            
+
+
+
+        </form>
+
+    </div>
+
+</main>
+{%endblock%}

@@ -1,0 +1,25 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang='pt-br'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="{% static 'css/maps.css' %">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+        <script  type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdj4cfypAzgr-E44tjCMU6A94Q69i8Ij4&libraries=places&language=pt&callback=initMap" async defer> </script>
+        <script src="{% static 'js/initMap.js'%}" async></script>
+        <script src="{% static 'js/cnpjmask.js'%}" async></script>
+
+        <script src=""></script>     
+   
+
+    </head>
+    <body >
+        
+        {% block content%}{% endblock %}
+      
+
+    </body>
+  
+</html>

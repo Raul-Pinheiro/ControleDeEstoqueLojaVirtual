@@ -1,0 +1,51 @@
+{% load static %}
+<header class="header_loja">
+    <div class="container-geral-header-loja">
+        
+        <div class="container-icon-logo">
+            <i class="fa fa-bars" style="font-size:36px" id="open_hamb"class="icone-barra"></i>
+            <h1 class="logo">Loja Virtual</h1>
+        </div>
+        <div class="container-form">
+            <form action="{% url 'busca_produto' %}"class="container-input-search" method="GET">                               
+                <input type="search" placeholder="Informe o nome do produto" name="buscar"class="busca_produto">                
+                
+                <button type="submit" class="btn_search"><i class="fa fa-search"></i></button>            
+            </form>
+        </div>
+    </div>
+
+    <div class="menu_dropdown">       
+        <i class="fa fa-bars" style="font-size:36px" id="close_hamb"class="icone-barra" ></i>
+      
+        <h1 class="logo">Loja Virtual</h1>
+      
+        <nav>
+            <ul class="list_menu">                                 
+                        
+               
+                    <li class="list_line"><a class="list_link" href="{% url 'lojavirtual'%}">Todos os produtos</a></li>
+
+                    <li class="list_line">
+                        <a class="list_link" style="cursor:pointer;">Categorias</a>
+                        <ul>
+                            {% for categoria in categorias.values %}                  
+                    
+                            {% if  categoria.categoria %}
+                            <li class="list_line">
+                                <a href="{% url 'busca_categoria' categoria.categoria %}" class="list_link">
+                                    {{categoria.categoria}}
+                                </a>
+                            </li>
+                            {%endif%}                    
+                        {% endfor %}
+                         
+                        </ul>
+                    </li>
+      
+                
+            </ul>
+        </nav>
+
+    </div>
+ </header>

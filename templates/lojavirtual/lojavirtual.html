@@ -1,0 +1,106 @@
+{% extends 'bases/base_template_loja.html' %}
+{% load static %}
+{% block content %}
+    {% include 'partials/_headerLojaVirtual.html'%}
+    
+   <main class="main">
+    <!-- ##### Pagination ##### -->
+        <section class="pag-section" id="scroll">
+            
+            <div class="navigation">
+                {% if produtos.has_other_pages %}
+                <ul class="pagination posicionamento-pagination" >
+                    {% if produtos.has_previous %}                        
+                        <li class="page-item">
+                            <a href="?page={{receita.previous_page_number}}" class="page-link">&laquo;</a>
+                        </li>
+                    {% else %}                      
+                        <li class="page-item disabled">
+                            <a class="page-link">&laquo;</a>
+                        </li>
+                    {%endif%}                   
+
+                    {% for pagina in produtos.paginator.page_range %}
+                    {% if produtos.number == pagina %}
+                        <li class="page-item active">
+                            <a class="page-link">{{pagina}}</a>
+                        </li>
+                    
+                    {% else %}
+                    
+                      
+                        <li class="page-item">
+                            <a href="?page={{pagina}}" class="page-link">{{pagina}}</a>
+                        </li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if produtos.has_next %}
+                        <li class="page-item">
+                            <a href="?page={{produtos.next_page_number}}" class="page-link">&raquo;</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link">&raquo;</a>
+                        </li>
+                    {% endif %}
+                        
+                </ul>
+                {% endif %}
+                
+            </div>
+        </section>
+  
+    <!-- ##### Pagination End ##### -->
+    <h1 class="text-center mt-4 pt-5">Confira nossos produtos</h1>
+    <!-- ##### Vitrine ##### -->
+       <div class="vitrine">
+        {% if produtos %}
+        {% for produto in produtos %}
+            <div class="container-thumb">
+                <div class="container-img">
+                {% if produto.foto_produto %}
+                    
+                    <img src="{{produto.foto_produto.url}}" class="foto-thumb" alt="{{produto.produto}}">   
+                {% else %}                                                   
+                    <img src="{% static 'images/varejo.jpg'%}" class="foto-thumb" alt="{{produto.produto}}">
+                {% endif %}          
+                                
+                    
+                </div> 
+                                                  
+               
+                <div class="product_description">
+                    <div class="description-container">
+                        <a href="{% url 'detalhes' produto.id %}" title="{{produto.produto}}" class="thumb-h1 thumbtitle-link"> 
+                            {{produto.produto}}
+                        </a>                        
+                        <h2 class="thumb-h2" title="{{produto.vendedor}}"><span class="span-thumb">Vendido por:</span> {{produto.vendedor}}</h2>
+                        <h2 class="thumb-h2" title="{{produto.valor_venda}}"><span class="span-thumb">Preço: </span>{{produto.valor_venda}}</h2>
+                        <h2 class="thumb-h2"title="{{produto.categoria}}"><span class="span-thumb">Categoria:</span> {{produto.categoria}}</h2>                    
+                        
+                        <h2 class="thumb-h2" title="{{produto.estoque_atual}}"><span class="span-thumb">Disponível:</span> {{produto.estoque_atual}}</h2>     
+                                     
+                    </div> 
+                    <form action=""method="" class="botao-thumb">
+                        <button type="submit" name="" class="btn btn-success mt-2">Adicionar ao Carrinho </button>
+                    </form>   
+
+                
+                                
+                </div>
+            </div>
+         
+        {% endfor %}
+        {%endif%}      
+        
+      
+       </div>
+    <!-- ##### Vitrine End ##### -->
+
+       
+   </main>
+    <div class="mt-2"style="background-color:rgb(166, 166, 167);">
+        {%include 'partials/_footerApresentacao.html' %}
+    </div>
+{% endblock %}

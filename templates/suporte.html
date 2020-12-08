@@ -1,0 +1,44 @@
+{% extends 'bases/base_template_loja.html'%}
+{%load static%}
+{% block content%}
+
+
+    <main id="main_container_type2_suporte">
+        <div id="main_suporte_box">
+            <p id="main_suporte_description">Entre em contato com nosso suporte.</p>
+            <form method="" action="" class="label_input">
+                <div class="label_input_row">
+                    <label class="label_input">                            
+                        Nome completo:
+                        <input type="text" class="input_type" required name="" placeholder="Digite seu nome">                        
+                    </label>
+                    <label class="label_input">                            
+                        E-mail para contato:
+                        <input type="email" class="input_type" required name="" placeholder="Digite seu email">                        
+                    </label>
+                
+                    <label class="label_input">                            
+                        Assunto:
+                        <select class="select">
+                            <option value="Sugestões" class="select_options">Sugestões</option>
+                            <option value="Técnico" class="select_options">Técnico</option>
+                            <option value="Dúvidas" class="select_options">Dúvidas</option>
+                            <option value="Reclamações" class="select_options">Reclamações</option>
+                            <option value="Experiência com W1dea" class="select_options">Experiência com W1dea</option>
+                            <option value="Reembolso" class="select_options">Reembolso</option>
+                        </select>                        
+                    </label>
+                </div>
+                <label class="label_input">
+                    Descreva:                            
+                    <textarea class="textarea">
+
+                    </textarea>          
+                </label>
+                <input type="submit" value="Solicitar" class="button">
+            </form>
+            <button class="button" ><a class="links" href="{% url 'index'%}">Voltar</a></button> 
+        </div>
+    </main>
+
+{% endblock %}

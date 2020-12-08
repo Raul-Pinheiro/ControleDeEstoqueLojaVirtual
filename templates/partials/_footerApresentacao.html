@@ -1,0 +1,30 @@
+{%load static %}
+
+<footer class="container-fluid d-flex justify-content-around align-items-start p-5 mt-0 position-relative fixed-bottom">
+    <div class="row d-flex flex-column  ">
+        <h4 class="text-center">Informações:</h4>
+        <nav>
+            <ul  class="col nav d-flex flex-column">
+               <li class="m-1 nav-item"><a class="nav-link" href="{% url 'index'%}">Home</a></li>
+               <li class="m-1 nav-item"><a class="nav-link" href="">Notícias</a></li>
+               <li class="m-1 nav-item"><a class="nav-link" href="">Sobre nós</a></li>
+               <li class="m-1 nav-item"><a class="nav-link" href="">Trabalhe conosco</a></li>
+               <li class="m-1 nav-item"><a class="nav-link" href="{% url 'suporte'%}">Suporte</a></li>
+               <li class="m-1 nav-item"><a class="nav-link" href="{% url 'localize' %}">Localize-se</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <div class="row d-flex flex-column ">
+        <h4 class="text-center">Siga-nos:</h4>
+            <nav>
+                <ul  class="col nav d-flex align-items-center justify-content-center">
+                   <li class="m-1 nav-item"><a  class="nav-link"><img src="{% static 'images/facebook.png'%}" ></a></li>
+                   <li class="m-1 nav-item"><a  class="nav-link"><img src="{% static 'images/instagram.png'%}"></a></li>
+                   <li class="m-1 nav-item"><a  class="nav-link"><img src="{% static 'images/twitter.png'%}"></a></li>
+                   <li class="m-1 nav-item"><a  class="nav-link" target="_blank"href="https://api.whatsapp.com/send?phone=5513997196637-"><img src="{% static 'images/whatsapp.png'%}"></a></li>
+                </ul>
+            </nav>
+    </div>
+    
+</footer>
